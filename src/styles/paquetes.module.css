@@ -1,0 +1,6 @@
+.containerTitulos{
+    display: flex; 
+    padding: 50px;
+    padding-left: 150px;
+    padding-bottom: 200px;
+}

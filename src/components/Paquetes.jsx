@@ -3,16 +3,16 @@ import styles from "../styles/paquetes.module.css";
 
 function Paquetes() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); // Estado para la carga
-  const [error, setError] = useState(null);   // Estado para errores
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null);   
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setLoading(true); // Indica que la carga está en curso
-      setError(null);    // Reinicia el estado de error
+      setLoading(true); 
+      setError(null);
 
       try {
-        const response = await fetch('/products'); // URL de tu backend en Vercel. Si está en el mismo dominio, solo la ruta.
+        const response = await fetch("https://sistema-snowy.vercel.app/products");  //¿Debo colocar en el parametro de fetch "https://sistema-snowy.vercel.app/products"?
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`); // Lanza un error si la respuesta no es ok
         }
@@ -20,9 +20,9 @@ function Paquetes() {
         setProducts(data);
       } catch (err) {
         console.error("Error al obtener productos:", err);
-        setError(err); // Guarda el error para mostrarlo en la interfaz
+        setError(err); 
       } finally {
-        setLoading(false); // Indica que la carga ha terminado, independientemente del resultado
+        setLoading(false); 
       }
     };
 

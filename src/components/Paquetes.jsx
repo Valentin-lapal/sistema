@@ -12,7 +12,7 @@ function Paquetes() {
       setError(null);
 
       try {
-        const response = await fetch("https://sistema-snowy.vercel.app/products");  
+        const response = await fetch("https://sistema-snowy.vercel.app/api/products");  
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`); 
         }

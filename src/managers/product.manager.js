@@ -1,14 +1,16 @@
 const { collection, getDocs } = require("firebase/firestore");
 const { db } = require("../db/config");
 
-const TIENDA_NUBE_API_URL = "https://api.tiendanube.com/v1/5676879/products";
-const ACCESS_TOKEN = "9e839ad691c01ff908903432e79ed3392d138638";
-const USER_AGENT = "Praga (valentin.lapalma25@gmail.com)";
+require('dotenv').config();
+
+const ID_TIENDA = process.env.ID_TIENDA;
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+const USER_AGENT = process.env.USER_AGENT;
 
 
 const productsTiendaNube = async () => {
     try {
-        const response = await fetch(TIENDA_NUBE_API_URL, {
+        const response = await fetch(`https://api.tiendanube.com/v1/${ID_TIENDA}/products`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${ACCESS_TOKEN}`,

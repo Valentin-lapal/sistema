@@ -1,21 +1,17 @@
-const { collection, getDocs } = require("firebase/firestore");
+const { collection, getDocs, addDoc } = require("firebase/firestore");
 const { db } = require("../db/config");
-
+const fetch = require("node-fetch");
 require('dotenv').config();
-
-const ID_TIENDA = process.env.ID_TIENDA;
-const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
-const USER_AGENT = process.env.USER_AGENT;
 
 
 const productsTiendaNube = async () => {
     try {
-        const response = await fetch(`https://api.tiendanube.com/v1/${ID_TIENDA}/products`, {
+        const response = await fetch(`https://api.tiendanube.com/v1/${process.env.ID_TIENDA}/products`, {
             method: "GET",
             headers: {
-                "Authorization": `Bearer ${ACCESS_TOKEN}`,
+                "Authorization": `Bearer ${process.env.ACCESS_TOKEN}`,
                 "Content-Type": "application/json",
-                "User-Agent": `${USER_AGENT}`
+                "User-Agent": `${process.env.USER_AGENT}`
             }
         });
 

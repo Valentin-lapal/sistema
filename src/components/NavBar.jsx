@@ -8,6 +8,7 @@ function NavBar() {
         <Navbar.Brand href="#home">Sistema</Navbar.Brand>
         <Navbar.Brand href="#home">Historial</Navbar.Brand>
         <Navbar.Brand href="#home">Estados</Navbar.Brand>
+        <Navbar.Brand href="#home">Configuraciones</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         </Navbar.Collapse>

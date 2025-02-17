@@ -34,7 +34,7 @@ const productsTiendaNube = async () => {
         return { message: "Productos sincronizados con Firestore", products }; // Retorna el objeto con el mensaje y los productos
     } catch (error) {
         console.error("Error sincronizando productos:", error);
-        throw error; // Re-lanza el error para que sea manejado en la ruta
+        throw error; 
     }
 };
 
@@ -48,7 +48,7 @@ const getAllProducts = async () => {
       return products;
     } catch (error) {
       console.error("Error al obtener productos:", error);
-      throw error; // Re-lanza el error para que pueda ser manejado en la ruta
+      throw error; 
     }
 };
 

@@ -5,10 +5,13 @@ const app = express();
 require("dotenv").config();
 
 
-app.use(cors());
+app.use(cors({
+    origin: "https://sistema-snowy.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
-
-
 app.use("/api", routes);
 
 const PORT = process.env.PORT || 3000;

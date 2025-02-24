@@ -5,11 +5,18 @@ const app = express();
 require("dotenv").config();
 
 
+
 app.use(cors({
     origin: "https://sistema-snowy.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
 }));
+
+
+app.options('/api/*', cors());
+
+
 
 app.use(express.json());
 app.use("/api", routes);

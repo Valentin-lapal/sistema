@@ -6,10 +6,10 @@ require("dotenv").config();
 
 const allowedOrigins = [
     "https://sistema-snowy.vercel.app", 
-    "http://localhost:3000", 
+    "http://localhost:2000", 
 ];
 
-pp.use(cors({
+app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
@@ -25,14 +25,17 @@ pp.use(cors({
 app.options('/api/*', cors());
 
 
-
 app.use(express.json());
 app.use("/api", routes);
 
-const PORT = process.env.PORT || 3000;
+app.get("/", (req, res) => {
+    res.send("Bienvenido a la API de Sistema");
+});
+
+const PORT = process.env.PORT || 2000;
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en puerto ${PORT}`);
+    console.log(`Servidor corriendo en puerto http://localhost:${PORT}`);
 });
 
 

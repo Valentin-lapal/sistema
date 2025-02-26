@@ -30,11 +30,11 @@ function Paquetes() {
   }, []);
 
   if (loading) {
-    return <div>Cargando productos...</div>; // Muestra un mensaje de carga mientras se obtienen los datos
+    return <div>Cargando productos...</div>; 
   }
 
   if (error) {
-    return <div>Error al cargar productos: {error.message}</div>; // Muestra un mensaje de error si ocurre uno
+    return <div>Error al cargar productos: {error}</div>; 
   }
 
   return (
@@ -59,18 +59,3 @@ export default Paquetes;
 
 
 
-// import styles from "../styles/paquetes.module.css";
-
-
-// function Paquetes() {
-  
-//   return (
-//     <div className="div-fondo">
-//       <div className={styles.containerTitulos}>
-//         <h1 className="titulos">Productos</h1>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Paquetes;

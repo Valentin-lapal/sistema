@@ -9,6 +9,7 @@ const getProducts = async (req, res) => {
     }
 };
 
+
 const syncProducts = async (req, res) => {
     try {
         const result = await productsTiendaNube();

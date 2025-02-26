@@ -6,6 +6,9 @@ require('dotenv').config();
 
 const productsTiendaNube = async () => {
     try {
+        if (!process.env.ID_TIENDA || !process.env.ACCESS_TOKEN || !process.env.USER_AGENT) {
+            throw new Error("Faltan variables de entorno necesarias para la API de Tienda Nube.");
+        }
         const response = await fetch(`https://api.tiendanube.com/v1/${process.env.ID_TIENDA}/products`, {
             method: "GET",
             credentials: 'include',

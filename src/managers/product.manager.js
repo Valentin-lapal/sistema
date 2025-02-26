@@ -8,6 +8,7 @@ const productsTiendaNube = async () => {
     try {
         const response = await fetch(`https://api.tiendanube.com/v1/${process.env.ID_TIENDA}/products`, {
             method: "GET",
+            credentials: 'include',
             headers: {
                 "Authorization": `Bearer ${process.env.ACCESS_TOKEN}`,
                 "Content-Type": "application/json",

@@ -4,15 +4,23 @@ const routes = require("./routes");
 const app = express();
 require("dotenv").config();
 
+const allowedOrigins = [
+    "https://sistema-snowy.vercel.app", 
+    "http://localhost:3000", 
+];
 
-
-app.use(cors({
-    origin: "https://sistema-snowy.vercel.app",
+pp.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Origen no permitido por CORS'));
+        }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
-
 
 app.options('/api/*', cors());
 

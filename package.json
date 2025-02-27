@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node src/app.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

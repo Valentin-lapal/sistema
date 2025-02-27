@@ -6,6 +6,10 @@ require('dotenv').config();
 
 const productsTiendaNube = async () => {
     try {
+        console.log("ID_TIENDA:", process.env.ID_TIENDA);
+        console.log("ACCESS_TOKEN:", process.env.ACCESS_TOKEN);
+        console.log("USER_AGENT:", process.env.USER_AGENT);
+        
         if (!process.env.ID_TIENDA || !process.env.ACCESS_TOKEN || !process.env.USER_AGENT) {
             throw new Error("Faltan variables de entorno necesarias para la API de Tienda Nube.");
         }

@@ -46,7 +46,10 @@ function Paquetes() {
         {products.map(product => (
           <div key={product.id} className={styles.productCard}>
             <h2 className={styles.productTitle}>{product.name}</h2>
-            <p className={styles.productDescription}>{product.description}</p>
+            <p>{product.description}</p>
+            <p>{product.price}</p>
+            <p>{product.position}</p>
+            <p>{product.stock_management}</p>
           </div>
         ))}
       </div>

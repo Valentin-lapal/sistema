@@ -45,11 +45,11 @@ function Paquetes() {
       <div className={styles.productsContainer}>
         {products.map(product => (
           <div key={product.id} className={styles.productCard}>
-            <h2 className={styles.productTitle}>{product.name}</h2>
+            <h2>{product.name}</h2>
             <p>{product.description}</p>
-            <p>{product.price[0]}</p>
-            <p>{product.position[0]}</p>
-            <p>{product.stock_management[0]}</p>
+            <p>{product.price}</p>
+            <p>{product.position}</p>
+            <p>{product.stock_management}</p>
           </div>
         ))}
       </div>

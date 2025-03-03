@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from "../styles/paquetes.module.css";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 function Paquetes() {
   const [products, setProducts] = useState([]);

@@ -43,25 +43,30 @@ function Paquetes() {
         <h1 className="titulos">Paquetes</h1>
       </div>
       <div className={styles.OrdersContainer}>
-        {products.map(product => (
-          <div key={product.id} className={styles.productCard}>
-            <h2>Número de orden: {product.numero_orden}</h2>
-            <p>Nombre: {product.name}</p>
-            <p>Contacto: {product.contacto}</p>
-            <p>Dirección: {product.direccion}</p>
-            <p>Nota: {product.nota}</p>
-            <p>Localidad: {product.localidad}</p>
-            <p>CP: {product.codigo_postal}</p>
-            <p>Email: {product.email}</p>
-          </div>
-        ))}
+        <Row>
+          {products.map(product => (
+            <Col md={4}>
+              <Card key={product.id} className={styles.OrdersContainer} >
+                <ListGroup  variant="flush">
+                  <ListGroup.Item ><h2>Número de orden:  {product.numero_orden}</h2></ListGroup.Item>
+                  <ListGroup.Item><h6>Nombre: {product.name}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Contacto: {product.contacto}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Dirección: {product.direccion}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Nota: {product.nota}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Localidad: {product.localidad}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>CP: {product.codigo_postal}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Email: {product.email}</h6></ListGroup.Item>
+                </ListGroup>
+              </Card>
+            </Col>  
+          ))}
+        </Row>
       </div>
     </div>
   );
 }
  
 export default Paquetes;
-
 
 
 

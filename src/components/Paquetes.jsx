@@ -40,15 +40,19 @@ function Paquetes() {
   return (
     <div className="div-fondo">
       <div className={styles.containerTitulos}>
-        <h1 className="titulos">Productos</h1>
+        <h1 className="titulos">Paquetes</h1>
       </div>
       <div className={styles.productsContainer}>
         {products.map(product => (
           <div key={product.id} className={styles.productCard}>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>Precio: {product.price}</p>
-            <p>Posicion: {product.position}</p>
+            <h2>Número de orden: {product.numero_orden}</h2>
+            <p>Nombre: {product.name}</p>
+            <p>Contacto: {product.contacto}</p>
+            <p>Dirección: {product.direccion}</p>
+            <p>Nota: {product.nota}</p>
+            <p>Localidad: {product.localidad}</p>
+            <p>CP: {product.codigo_postal}</p>
+            <p>Email: {product.email}</p>
           </div>
         ))}
       </div>

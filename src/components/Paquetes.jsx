@@ -42,7 +42,7 @@ function Paquetes() {
       <div className={styles.containerTitulos}>
         <h1 className="titulos">Paquetes</h1>
       </div>
-      <div className={styles.productsContainer}>
+      <div className={styles.OrdersContainer}>
         {products.map(product => (
           <div key={product.id} className={styles.productCard}>
             <h2>Número de orden: {product.numero_orden}</h2>

@@ -61,6 +61,7 @@ function Paquetes() {
                   <ListGroup.Item><h6>Localidad: {product.localidad}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>CP: {product.codigo_postal}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Email: {product.email}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Email: {product.status}</h6></ListGroup.Item>
                 </ListGroup>
               </Card>
             </Col>  

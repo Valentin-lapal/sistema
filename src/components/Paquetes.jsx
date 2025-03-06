@@ -4,10 +4,12 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
 
 
 function Paquetes() {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null);   
 
@@ -34,12 +36,27 @@ function Paquetes() {
     fetchProducts();
   }, []);
 
+  // if (loading) {
+  //   return <div>Cargando productos...</div>; 
+  // }
+
+  // if (error) {
+  //   return <div>Error al cargar productos: {error}</div>; 
+  // }
+
+  useEffect(() => {
+    const filtered = products.filter(product => 
+      product.numero_orden.toString().includes(search)
+    );
+    setFilteredProducts(filtered);
+  }, [search, products]);
+
   if (loading) {
-    return <div>Cargando productos...</div>; 
+    return <div>Cargando productos...</div>;
   }
 
   if (error) {
-    return <div>Error al cargar productos: {error}</div>; 
+    return <div>Error al cargar productos: {error}</div>;
   }
 
   return (
@@ -47,9 +64,17 @@ function Paquetes() {
       <div className={styles.containerTitulos}>
         <h1 className="titulos">Paquetes</h1>
       </div>
+      <Form.Group className="mb-3" controlId="searchOrder">
+        <Form.Control 
+          type="text" 
+          placeholder="Buscar por número de orden" 
+          value={search} 
+          onChange={(e) => setSearch(e.target.value)} 
+        />
+      </Form.Group>
       <div className={styles.OrdersContainer}>
         <Row>
-          {products.map(product => (
+          {filteredProducts.map(product => (
             <Col md={4}>
               <Card key={product.id} className={styles.OrdersContainer} >
                 <ListGroup  variant="flush">
@@ -57,11 +82,11 @@ function Paquetes() {
                   <ListGroup.Item><h6>Nombre: {product.name}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Contacto: {product.contacto}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Dirección: {product.direccion}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Número: {product.numero}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Nota: {product.nota}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Localidad: {product.localidad}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>CP: {product.codigo_postal}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Email: {product.email}</h6></ListGroup.Item>
-                  <ListGroup.Item><h6>Email: {product.status}</h6></ListGroup.Item>
                 </ListGroup>
               </Card>
             </Col>  

@@ -11,6 +11,14 @@
     margin: 30px
 }
 
+.formContainer {
+    width: 50%; /* Ocupa el 50% del ancho de la pantalla */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 
 

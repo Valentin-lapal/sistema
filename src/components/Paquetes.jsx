@@ -11,7 +11,8 @@ function Paquetes() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true); 
-  const [error, setError] = useState(null);   
+  const [error, setError] = useState(null);
+  const [search, setSearch] = useState('');  
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -25,6 +26,7 @@ function Paquetes() {
         }
         const data = await response.json();
         setProducts(data);
+        setFilteredProducts(data);
       } catch (err) {
         console.error("Error al obtener productos:", err);
         setError("No se pudieron cargar los productos. Inténtalo de nuevo más tarde."); 
@@ -36,13 +38,7 @@ function Paquetes() {
     fetchProducts();
   }, []);
 
-  // if (loading) {
-  //   return <div>Cargando productos...</div>; 
-  // }
-
-  // if (error) {
-  //   return <div>Error al cargar productos: {error}</div>; 
-  // }
+  
 
   useEffect(() => {
     const filtered = products.filter(product => 
@@ -75,9 +71,9 @@ function Paquetes() {
       <div className={styles.OrdersContainer}>
         <Row>
           {filteredProducts.map(product => (
-            <Col md={4}>
-              <Card key={product.id} className={styles.OrdersContainer} >
-                <ListGroup  variant="flush">
+            <Col md={4} key={product.id}>
+              <Card className={styles.OrdersContainer}>
+                <ListGroup variant="flush">
                   <ListGroup.Item ><h2>Número de orden:  {product.numero_orden}</h2></ListGroup.Item>
                   <ListGroup.Item><h6>Nombre: {product.name}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Contacto: {product.contacto}</h6></ListGroup.Item>

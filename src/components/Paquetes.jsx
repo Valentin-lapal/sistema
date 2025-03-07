@@ -42,7 +42,7 @@ function Paquetes() {
 
   useEffect(() => {
     const filtered = products.filter(product => 
-      product.numero_orden.toString().includes(search)
+      product.orden.toString().includes(search)
     );
     setFilteredProducts(filtered);
   }, [search, products]);

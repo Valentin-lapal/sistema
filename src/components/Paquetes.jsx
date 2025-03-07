@@ -74,14 +74,14 @@ function Paquetes() {
             <Col md={4} key={product.id}>
               <Card className={styles.OrdersContainer}>
                 <ListGroup variant="flush">
-                  <ListGroup.Item ><h2>Número de orden: {product.orden || ''}</h2></ListGroup.Item>
-                  <ListGroup.Item><h6>Nombre: {product.name || ''}</h6></ListGroup.Item>
-                  <ListGroup.Item><h6>Contacto: {product.contacto || ''}</h6></ListGroup.Item>
-                  <ListGroup.Item><h6>Email: {product.email || ''}</h6></ListGroup.Item>
-                  <ListGroup.Item><h6>Dirección: {product.direccion || ''}</h6></ListGroup.Item>
-                  <ListGroup.Item><h6>Número: {product.numero || ''}</h6></ListGroup.Item>
-                  <ListGroup.Item><h6>Localidad: {product.localidad || ''}</h6></ListGroup.Item>
-                  <ListGroup.Item><h6>CP: {product.codigo_postal || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item ><h2>Número de orden: {product?.orden || ''}</h2></ListGroup.Item>
+                  <ListGroup.Item><h6>Nombre: {product?.name || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Contacto: {product?.contacto || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Email: {product?.email || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Dirección: {product?.direccion || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Número: {product?.numero || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Localidad: {product?.localidad || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>CP: {product?.codigo_postal || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Ciudad: {product.ciudad || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Provincia: {product.provincia || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Note: {product.note || ''}</h6></ListGroup.Item>

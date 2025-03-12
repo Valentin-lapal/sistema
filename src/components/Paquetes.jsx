@@ -80,6 +80,7 @@ function Paquetes() {
                   <ListGroup.Item><h6>Email: {product?.email || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Dirección: {product?.direccion || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Número: {product?.numero || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Detalle: {product?.detalle || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Localidad: {product?.localidad || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>CP: {product?.codigo_postal || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Ciudad: {product.ciudad || ''}</h6></ListGroup.Item>
@@ -88,6 +89,7 @@ function Paquetes() {
                   <ListGroup.Item><h6>Nota: {product.nota || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Estado: {product.estado || ''}</h6></ListGroup.Item>
                   <ListGroup.Item><h6>Estadoshi: {product.estadoshi || ''}</h6></ListGroup.Item>
+                  <ListGroup.Item><h6>Creacion: {product?.creacion || ''}</h6></ListGroup.Item>
                 </ListGroup>
               </Card>
             </Col>  
